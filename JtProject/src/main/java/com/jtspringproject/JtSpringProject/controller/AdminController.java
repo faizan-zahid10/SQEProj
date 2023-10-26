@@ -4,9 +4,6 @@ import java.sql.*;
 import java.sql.PreparedStatement;
 import java.util.List;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +16,6 @@ import com.jtspringproject.JtSpringProject.models.User;
 import com.jtspringproject.JtSpringProject.services.categoryService;
 import com.jtspringproject.JtSpringProject.services.productService;
 import com.jtspringproject.JtSpringProject.services.userService;
-import com.mysql.cj.protocol.Resultset;
-
-import net.bytebuddy.asm.Advice.This;
-import net.bytebuddy.asm.Advice.OffsetMapping.ForOrigin.Renderer.ForReturnTypeName;
 
 @Controller
 @RequestMapping("/admin")
@@ -36,11 +29,11 @@ public class AdminController {
 	@Autowired
 	private productService productService;
 	
-	int adminlogcheck = 0;
+	int adminlogcheckin = 0;
 	String usernameforclass = "";
 	@RequestMapping(value = {"/","/logout"})
 	public String returnIndex() {
-		adminlogcheck =0;
+		adminlogcheckin =0;
 		usernameforclass = "";
 		return "userLogin";
 	}
@@ -66,7 +59,7 @@ public class AdminController {
 	}
 	@GetMapping("Dashboard")
 	public String adminHome(Model model) {
-		if(adminlogcheck==1)
+		if(adminlogcheckin ==1)
 			return "adminHome";
 		else
 			return "redirect:/admin/login";
@@ -83,7 +76,7 @@ public class AdminController {
 		
 		if(user.getRole().equals("ROLE_ADMIN")) {
 			ModelAndView mv = new ModelAndView("adminHome");
-			adminlogcheck=1;
+			adminlogcheckin =1;
 			mv.addObject("admin", user);
 			return mv;
 		}
@@ -95,7 +88,7 @@ public class AdminController {
 	}
 	@GetMapping("categories")
 	public ModelAndView getcategory() {
-		if(adminlogcheck==0){
+		if(adminlogcheckin ==0){
 			ModelAndView mView = new ModelAndView("adminlogin");
 			return mView;
 		}
@@ -138,7 +131,7 @@ public class AdminController {
 //	 --------------------------Remaining --------------------
 	@GetMapping("products")
 	public ModelAndView getproduct() {
-		if(adminlogcheck==0){
+		if(adminlogcheckin ==0){
 			ModelAndView mView = new ModelAndView("adminlogin");
 			return mView;
 		}
@@ -215,7 +208,7 @@ public class AdminController {
 	
 	@GetMapping("customers")
 	public ModelAndView getCustomerDetail() {
-		if(adminlogcheck==0){
+		if(adminlogcheckin ==0){
 			ModelAndView mView = new ModelAndView("adminlogin");
 			return mView;
 		}
@@ -237,7 +230,7 @@ public class AdminController {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommjava","root","");
 			PreparedStatement stmt = con.prepareStatement("select * from users where username = ?"+";");
 			stmt.setString(1, usernameforclass);
-			ResultSet rst = stmt.execute();
+			ResultSet rst = stmt.executeQuery();
 			
 			if(rst.next())
 			{

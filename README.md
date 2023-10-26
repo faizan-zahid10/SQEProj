@@ -26,6 +26,9 @@
    * Log in as a normal user:
      * Username: `lisa`
      * Password: `765`
+    
+     * Our new Usename:root
+     * Our new Password:my123123
 
 ### Database
 
@@ -106,3 +109,7 @@ The following guides illustrate how to use some features concretely:
 
 [youtube-shield]:https://img.shields.io/youtube/views/c6WWdINWSlI?style=social
 [youtube-url]:  https://youtu.be/c6WWdINWSlI
+
+
+##Del1 modifications:
+execute changed to executeQuery in AdminController.java. ecommjava DB naming process typos resolved. 

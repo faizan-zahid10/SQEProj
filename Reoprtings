@@ -1,1 +1,8 @@
-Test cases 
+Test cases 1 to 12 done!
+Test cases 1 to 6 to check admin and user credibility and log in validitation
+Test case 7 for ensuring valid range and values of Category name
+Test case 8 for checking addition of category succesfully completed
+Test case 9 for ensuring proper deletion of a category from list
+Test case 10 for invalid price
+Test case 11 for invalid weight checking
+Test case 12 for invalid quantity checking 

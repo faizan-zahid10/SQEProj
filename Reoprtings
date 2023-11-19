@@ -7,3 +7,75 @@ Test case 10 for invalid price
 Test case 11 for invalid weight checking
 Test case 12 for invalid quantity checking 
 -------------------------------
+
+State Transition Testing done By @Usman Amjad
+
+13. Login Page  Login Button:
+    Initial State: User is on the login page.
+    User Action: Click "Login."
+    Actual Behavior: Redirects to the Home Page.
+    Expected Behavior: Redirects to the Home Page after successful login.
+
+14. Home Page  Navigation to Profile Page:
+    Initial State: User is on the Home Page.
+    User Action: Click "Profile."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or navigate to the profile page.
+
+15. Home Page  Adding Product to Cart:
+    Initial State: User is on the Home Page.
+    User Action: Click "Add to Cart."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or navigate to the cart page.
+
+16. Home Page  Cart Navigation:
+    Initial State: User is on the Home Page.
+    User Action: Click "Cart."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or navigate to the cart page.
+
+17. Home Page  Logout:
+    Initial State: User is on the Home Page.
+    User Action: Click "Logout."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or perform logout action.
+
+18. Profile Page  Edit Profile:
+    Initial State: User is on the Profile Page.
+    User Action: Click "Edit Profile."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or allow the user to edit their profile.
+
+19. Profile Page  Logout:
+    Initial State: User is on the Profile Page.
+    User Action: Click "Logout."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or perform logout action.
+
+20. Cart Page  Continue Shopping:
+    Initial State: User is on the Cart Page.
+    User Action: Click "Continue Shopping."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Navigate back to the Home Page or display an error.
+
+21. Cart Page  Checkout:
+    Initial State: User is on the Cart Page.
+    User Action: Click "Checkout."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Navigate to the checkout page or display an error.
+
+22. Checkout Page  Place Order:
+    Initial State: User is on the Checkout Page.
+    User Action: Click "Place Order."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or process the order.
+
+23. Checkout Page  Cancel Order:
+    Initial State: User is on the Checkout Page.
+    User Action: Click "Cancel Order."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or cancel the order.
+
+These state transition test cases are done by  Usman Amjad follow the same format as before, with each case identifying the initial state, 
+user action, observed behavior, and expected behavior.
+

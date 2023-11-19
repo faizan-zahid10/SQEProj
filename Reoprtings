@@ -14,3 +14,8 @@ State Tansition Testing! @Usman Amjad
       Actual Behavior: Redirects to the login page.
       Expected Behavior: Should redirect to the home page upon successful login.
 
+2. Register Button:
+    Issue 2: Clicking on the "Register" button from the home page does not navigate to the registration page.
+      Test Case Reference: State Transition Test Case 2
+      Actual Behavior: No action, button not working.
+      Expected Behavior: Should navigate to the registration page.

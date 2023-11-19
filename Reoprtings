@@ -79,3 +79,45 @@ State Transition Testing done By @Usman Amjad
 These state transition test cases are done by  Usman Amjad follow the same format as before, with each case identifying the initial state, 
 user action, observed behavior, and expected behavior.
 
+--------------------------------------------------------------
+
+This is done By @Hafiz Mannan Siddiqui
+
+TC19-TC21: User Registration
+    EC19: Valid email addresses and passwords meeting the minimum length and complexity requirements.
+    EC20: Invalid email addresses or does not use proper format or missing @gmail.com/@oulook.com.
+    EC21: Passwords below the minimum length or wrong.
+
+TC22-TC24: Product Search
+    EC22: Exact match of a product name or category.
+    EC23: Partial match of a product name or category.
+    EC24: Non-existent product names or categories.
+
+TC25-TC28: Shopping Cart
+    EC25: Adding a single item.
+    EC26: Adding multiple items.
+    EC27: Removing a single item.
+    EC28: Removing all items.
+
+TC29-TC31: Checkout Process
+    EC29: Valid shipping address and payment information.
+    EC30: Invalid or incomplete shipping address.
+    EC31: Invalid payment information.
+
+TC32-TC33: User Authentication
+    EC32: Correct username and password.
+    EC33: Incorrect username or password.
+
+TC34-TC35: Payment Processing
+    EC34: Valid credit card information.
+    EC35: Invalid credit card information.
+
+TC36-TC37: Coupon Codes
+    EC36: Active and valid coupon codes.
+    EC37: Expired or inactive coupon codes.
+
+TC38-TC39: User Account Management
+    EC38: Valid changes to user details.
+    EC39: Attempting to update with invalid data.
+
+This testing was conducted to ensure the robustness and reliability of the code.

@@ -6,3 +6,11 @@ Test case 9 for ensuring proper deletion of a category from list
 Test case 10 for invalid price
 Test case 11 for invalid weight checking
 Test case 12 for invalid quantity checking 
+-------------------------------
+State Tansition Testing! @Usman Amjad
+1. Login Button:
+    Issue 1: Clicking on the "Login" button from the login page does not redirect to the home page.
+      Test Case Reference: State Transition Test Case 1
+      Actual Behavior: Redirects to the login page.
+      Expected Behavior: Should redirect to the home page upon successful login.
+

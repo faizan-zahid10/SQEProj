@@ -17,7 +17,7 @@ State Tansition Testing! @Usman Amjad
 2. Register Button:
     Issue 2: Clicking on the "Register" button from the home page does not navigate to the registration page.
       Test Case Reference: State Transition Test Case 2
-      Actual Behavior: No action, button not working.
+      Actual Behavior: navigated to the Registration page.
       Expected Behavior: Should navigate to the registration page.
 
 3. Add to Cart Button:

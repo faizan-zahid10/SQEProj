@@ -121,3 +121,28 @@ TC38-TC39: User Account Management
     EC39: Attempting to update with invalid data.
 
 This testing was conducted to ensure the robustness and reliability of the code.
+
+
+Registration
+TC40 : Valid Registration
+TC41 : Invalid email for registration
+TC42 : Invalid password
+TC43 : Invalid Address
+TC44 : Blank username
+TC45 : Blank email
+TC46 : Blank password
+TC47 : Blank address
+TC48 : Long username
+TC49 : Short username
+TC50 : Long email
+TC51 : Short email
+TC52 : Long password
+TC53 : Short password
+TC54 : Long address 
+TC55 : Short address
+TC56 : username with special characters
+TC57 : email with special characters
+TC58 : password with special characters
+TC59 : address with special characters
+TC60 : multispace characters in username
+

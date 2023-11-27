@@ -76,6 +76,7 @@ When you run the project, the views should be found by Spring Boot and you shoul
 - http://localhost:8080/admin/customers
 - http://localhost:8080/admin/categories
 - http://localhost:8080/admin/Dashboard
+- http://localhost:8080/admin/login
 
 
 ## Spring Boot

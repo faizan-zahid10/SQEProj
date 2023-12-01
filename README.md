@@ -14,8 +14,8 @@
 ## Quickstart
 
 1. Clone the repository
-2. Open the project in your IDE: IntelliJ IDEA (recommended) or Eclipse
-    * If you are using IntelliJ IDEA, make sure the IDE recognizes the project as a Spring Boot project. Also, you must change the working directory of the project so that the views (the actual web pages to be shown) are found by Spring Boot (check out [Web Directories IntelliJ IDEA](#web-directories).
+2. Open the project in your IDE: IntelliJ IDEA
+    *Ensure that when using IntelliJ IDEA, the IDE identifies the project as a Maven project. Next, navigate to the top menu on the right side, access Build/Run configurations, and add a Maven configuration. Set the task to 'spring-boot:run.'
 3. Make sure you are in the `JtProject` directory
 4. Configure the database connection in `application.properties` file (check the [Database](#database) section below for more info)
 5. Run the project (by running the `main` method in `JtSpringProjectApplication.java`)
@@ -26,6 +26,9 @@
    * Log in as a normal user:
      * Username: `lisa`
      * Password: `765`
+    
+     * Our new Usename:root
+     * Our new Password:my123123
 
 ### Database
 
@@ -73,6 +76,7 @@ When you run the project, the views should be found by Spring Boot and you shoul
 - http://localhost:8080/admin/customers
 - http://localhost:8080/admin/categories
 - http://localhost:8080/admin/Dashboard
+- http://localhost:8080/admin/login
 
 
 ## Spring Boot
@@ -94,11 +98,7 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 
-## Preview
 
-![image](https://github.com/jaygajera17/E-commerce-project-springBoot/assets/81226571/02a04d3c-1fc9-418c-b231-639f6525d07e)
-![image](https://github.com/jaygajera17/E-commerce-project-springBoot/assets/81226571/24c4451b-43a6-4c23-a78a-786eab4303b0)
-![image](https://github.com/jaygajera17/E-commerce-project-springBoot/assets/81226571/93c1baeb-326c-450f-867e-a883900a6644)
 
 
 ## Link
@@ -106,3 +106,7 @@ The following guides illustrate how to use some features concretely:
 
 [youtube-shield]:https://img.shields.io/youtube/views/c6WWdINWSlI?style=social
 [youtube-url]:  https://youtu.be/c6WWdINWSlI
+
+
+##Del1 modifications:
+execute changed to executeQuery in AdminController.java. ecommjava DB naming process typos resolved. 

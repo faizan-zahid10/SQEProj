@@ -1,0 +1,148 @@
+Test cases 1 to 12 done! @Faizan Zahid
+Test cases 1 to 6 to check admin and user credibility and log in validitation
+Test case 7 for ensuring valid range and values of Category name
+Test case 8 for checking addition of category succesfully completed
+Test case 9 for ensuring proper deletion of a category from list
+Test case 10 for invalid price
+Test case 11 for invalid weight checking
+Test case 12 for invalid quantity checking 
+-------------------------------
+
+State Transition Testing done By @Usman Amjad
+
+13. Login Page  Login Button:
+    Initial State: User is on the login page.
+    User Action: Click "Login."
+    Actual Behavior: Redirects to the Home Page.
+    Expected Behavior: Redirects to the Home Page after successful login.
+
+14. Home Page  Navigation to Profile Page:
+    Initial State: User is on the Home Page.
+    User Action: Click "Profile."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or navigate to the profile page.
+
+15. Home Page  Adding Product to Cart:
+    Initial State: User is on the Home Page.
+    User Action: Click "Add to Cart."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or navigate to the cart page.
+
+16. Home Page  Cart Navigation:
+    Initial State: User is on the Home Page.
+    User Action: Click "Cart."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or navigate to the cart page.
+
+17. Home Page  Logout:
+    Initial State: User is on the Home Page.
+    User Action: Click "Logout."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or perform logout action.
+
+18. Profile Page  Edit Profile:
+    Initial State: User is on the Profile Page.
+    User Action: Click "Edit Profile."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or allow the user to edit their profile.
+
+19. Profile Page  Logout:
+    Initial State: User is on the Profile Page.
+    User Action: Click "Logout."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or perform logout action.
+
+20. Cart Page  Continue Shopping:
+    Initial State: User is on the Cart Page.
+    User Action: Click "Continue Shopping."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Navigate back to the Home Page or display an error.
+
+21. Cart Page  Checkout:
+    Initial State: User is on the Cart Page.
+    User Action: Click "Checkout."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Navigate to the checkout page or display an error.
+
+22. Checkout Page  Place Order:
+    Initial State: User is on the Checkout Page.
+    User Action: Click "Place Order."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or process the order.
+
+23. Checkout Page  Cancel Order:
+    Initial State: User is on the Checkout Page.
+    User Action: Click "Cancel Order."
+    Actual Behavior: No action, button not working.
+    Expected Behavior: Display an error or cancel the order.
+
+These state transition test cases are done by  Usman Amjad follow the same format as before, with each case identifying the initial state, 
+user action, observed behavior, and expected behavior.
+
+--------------------------------------------------------------
+
+This is done By @Hafiz Mannan Siddiqui
+
+TC19-TC21: User Registration
+    EC19: Valid email addresses and passwords meeting the minimum length and complexity requirements.
+    EC20: Invalid email addresses or does not use proper format or missing @gmail.com/@oulook.com.
+    EC21: Passwords below the minimum length or wrong.
+
+TC22-TC24: Product Search
+    EC22: Exact match of a product name or category.
+    EC23: Partial match of a product name or category.
+    EC24: Non-existent product names or categories.
+
+TC25-TC28: Shopping Cart
+    EC25: Adding a single item.
+    EC26: Adding multiple items.
+    EC27: Removing a single item.
+    EC28: Removing all items.
+
+TC29-TC31: Checkout Process
+    EC29: Valid shipping address and payment information.
+    EC30: Invalid or incomplete shipping address.
+    EC31: Invalid payment information.
+
+TC32-TC33: User Authentication
+    EC32: Correct username and password.
+    EC33: Incorrect username or password.
+
+TC34-TC35: Payment Processing
+    EC34: Valid credit card information.
+    EC35: Invalid credit card information.
+
+TC36-TC37: Coupon Codes
+    EC36: Active and valid coupon codes.
+    EC37: Expired or inactive coupon codes.
+
+TC38-TC39: User Account Management
+    EC38: Valid changes to user details.
+    EC39: Attempting to update with invalid data.
+
+This testing was conducted to ensure the robustness and reliability of the code.
+
+
+Registration
+TC40 : Valid Registration
+TC41 : Invalid email for registration
+TC42 : Invalid password
+TC43 : Invalid Address
+TC44 : Blank username
+TC45 : Blank email
+TC46 : Blank password
+TC47 : Blank address
+TC48 : Long username
+TC49 : Short username
+TC50 : Long email
+TC51 : Short email
+TC52 : Long password
+TC53 : Short password
+TC54 : Long address 
+TC55 : Short address
+TC56 : username with special characters
+TC57 : email with special characters
+TC58 : password with special characters
+TC59 : address with special characters
+TC60 : multispace characters in username
+

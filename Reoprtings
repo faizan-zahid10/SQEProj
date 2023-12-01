@@ -146,3 +146,11 @@ TC58 : password with special characters
 TC59 : address with special characters
 TC60 : multispace characters in username
 
+
+-----------Deliverable 4 -------------------------------
+======= Hafiz MAnnan Siddiqui =======================
+Add missing Features. 
+Coupon code Generation & Coupon code validity missing feature added.
+Banking Details in which Bank card info, tranfer, trancation and other features added.
+Bug fixing in admin panel in which customer page has DELETE?UPDATE button was missing.I added the buttons and buttons logic.
+

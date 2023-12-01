@@ -46,7 +46,13 @@ public class Product {
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		if (name.matches("[a-zA-Z]+")) {
+			this.name = name;
+		}
+		else
+		{
+			throw new IllegalArgumentException("Invalid name. Please use only alphabetic characters.");
+		}
 	}
 
 	public String getImage() {

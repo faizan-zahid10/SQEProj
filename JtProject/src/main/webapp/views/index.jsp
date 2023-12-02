@@ -44,6 +44,16 @@
                  <li class="nav-item active">
                     <a class="nav-link" href="profileDisplay" >Profile</a>
                 </li>
+
+
+
+                <li class="nav-item active">
+                  <a class="nav-link" href="about">About</a> <!-- Added About button -->
+              </li>
+
+
+
+
                 <li class="nav-item active">
                     <a class="nav-link" sec:authorize="isAuthenticated()" href="logout">Logout</a>
                 </li>

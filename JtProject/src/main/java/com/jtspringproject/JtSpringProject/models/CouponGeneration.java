@@ -1,9 +1,10 @@
+/*
 // CouponGenerator.java
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class CouponGenerator {
+public class CouponGeneration {
     public static List<String> generateCouponCodes(int numberOfCoupons) {
         List<String> coupons = new ArrayList<>();
         int[] discountPercentages = {10, 20, 30, 40, 50}; // Add more percentages if needed
@@ -22,3 +23,4 @@ public class CouponGenerator {
         return UUID.randomUUID().toString().substring(0, 8);
     }
 }
+*/

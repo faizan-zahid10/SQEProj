@@ -1,3 +1,4 @@
+/*
 // @RequestMapping(value = "/deleteuser", method = RequestMethod.POST)
 // public String deleteUser(@RequestParam("userid") int userid) {
 //     try {
@@ -120,4 +121,5 @@ public class UserController {
         return "redirect:/index";
     }
 }
+*/
 

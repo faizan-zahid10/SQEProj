@@ -49,23 +49,29 @@ public class UserController{
 	{
 		return "buy";
 	}
-	
 
-	@GetMapping("/")
-	public String userlogin(Model model) {
-		
-		return "userLogin";
+
+	@GetMapping({"/logout", "/"})
+	public String logout(HttpServletResponse res) {
+		Cookie usernameCookie = new Cookie("username", "");
+		usernameCookie.setMaxAge(0);
+		res.addCookie(usernameCookie);
+
+		return "/userLogin";
 	}
+
+
 	@RequestMapping(value = "userloginvalidate", method = RequestMethod.POST)
-	public ModelAndView userlogin( @RequestParam("username") String username, @RequestParam("password") String pass,Model model,HttpServletResponse res) {
-		
+	public ModelAndView userlogin(@RequestParam("username") String username,
+								  @RequestParam("password") String pass,
+								  Model model, HttpServletResponse res) {
+
 		System.out.println(pass);
 		User u = this.userService.checkLogin(username, pass);
-		System.out.println(u.getUsername());
-		if(u.getUsername().equals(username)) {	
-			
+
+		if (u != null && u.getUsername() != null && u.getUsername().equals(username)) {
 			res.addCookie(new Cookie("username", u.getUsername()));
-			ModelAndView mView  = new ModelAndView("index");	
+			ModelAndView mView = new ModelAndView("index");
 			mView.addObject("user", u);
 			List<Product> products = this.productService.getProducts();
 
@@ -76,15 +82,15 @@ public class UserController{
 			}
 			return mView;
 
-		}else {
+		} else {
 			ModelAndView mView = new ModelAndView("userLogin");
 			mView.addObject("msg", "Please enter correct email and password");
 			return mView;
 		}
-		
 	}
-	
-	
+
+
+
 	@GetMapping("/user/products")
 	public ModelAndView getproduct() {
 
@@ -150,7 +156,50 @@ public class UserController{
 			
 		}
 
-
+//	String usernameforclass = "";
+//	@GetMapping("profileDisplay")
+//	public String profileDisplay(Model model) {
+//		String displayusername,displaypassword,displayemail,displayaddress;
+//		try
+//		{
+//			Class.forName("com.mysql.jdbc.Driver");
+//			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommjava","root","1234");
+//			PreparedStatement stmt = con.prepareStatement("select * from customer where username = ?"+";");
+//			stmt.setString(1, usernameforclass);
+//			ResultSet rst = stmt.executeQuery();
+//
+//			if(rst.next())
+//			{
+//				int userid = rst.getInt(1);
+//				displayusername = rst.getString(2);
+//				displayemail = rst.getString(3);
+//				displaypassword = rst.getString(4);
+//				displayaddress = rst.getString(5);
+//				model.addAttribute("userid",userid);
+//				model.addAttribute("username",displayusername);
+//				model.addAttribute("email",displayemail);
+//				model.addAttribute("password",displaypassword);
+//				model.addAttribute("address",displayaddress);
+//			}
+//		}
+//		catch(Exception e)
+//		{
+//			System.out.println("Exception:"+e);
+//		}
+//		return "updateProfile";
+//	}
+//
+//	@GetMapping("/user/cart")
+//	public ModelAndView viewCart(@CookieValue(value = "username", defaultValue = "") String username) {
+//		ModelAndView mView = new ModelAndView("cartproduct");
+//
+//		try {
+//		} catch (Exception e) {
+//			mView.addObject("error", "error: " + e.getMessage());
+//		}
+//
+//		return mView;
+//	}
 //	@GetMapping("carts")
 //	public ModelAndView  getCartDetail()
 //	{

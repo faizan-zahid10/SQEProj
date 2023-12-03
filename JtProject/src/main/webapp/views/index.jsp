@@ -60,7 +60,7 @@
 
 
                 <li class="nav-item active">
-                    <a class="nav-link" sec:authorize="isAuthenticated()" href="logout">Logout</a>
+                    <a class="nav-link" sec:authorize="isAuthenticated()" href="userLogin">Logout</a>
                 </li>
                
             </ul>

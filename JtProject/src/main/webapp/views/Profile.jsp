@@ -13,13 +13,13 @@
     <!-- Button to navigate to the profile page -->
     <button onclick="navigateToProfile()">Profile</button>
 
-    <script>
+    //<script>
         // JavaScript function to navigate to the profile page
-        function navigateToProfile() {
+      //  function navigateToProfile() {
             // Redirect to the profile page URL
-            window.location.href = '/profile.jsp';
-        }
-    </script>
+        //    window.location.href = '/profile.jsp';
+       // }
+    // </script>
 
     <%-- Fetch user information from the database (replace with your actual database logic) --%>
     <%

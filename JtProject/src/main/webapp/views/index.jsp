@@ -56,7 +56,9 @@
                   <a class="nav-link" href="Contact">Contact us</a> <!-- Added Contact us button -->
               </li>
 
-
+		<li class="nav-item active">
+                  <a class="nav-link" href="Coupon">Copan Code</a> <!-- Added Coupan button -->
+              </li>
 
 
                 <li class="nav-item active">

@@ -49,126 +49,88 @@
     %>
 
 <%
-    // Validate input method
-    private boolean validateInput(String accountNumber, String amount, String operation) {
-        // Add your validation logic here
-        // For simplicity, we'll check if accountNumber, amount, and operation are not empty
+    import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class AccountTransaction {
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/yourdatabase";
+    private static final String DB_USER = "username";
+    private static final String DB_PASSWORD = "password";
+
+    public static boolean validateInput(String accountNumber, String amount, String operation) {
         return accountNumber != null && !accountNumber.isEmpty() &&
-               amount != null && !amount.isEmpty() &&
-               operation != null && !operation.isEmpty();
+                amount != null && !amount.isEmpty() &&
+                operation != null && !operation.isEmpty();
     }
 
-    // Simulate various banking operations (replace with your actual logic)
-    private boolean performTransaction(String accountNumber, double amount, String operation) {
-        //   logic, replace with actual backend or external service calls
+    public static boolean performTransaction(String accountNumber, double amount, String operation) {
         if ("deposit".equals(operation)) {
-            // Simulate deposit operation
             return deposit(accountNumber, amount);
         } else if ("withdraw".equals(operation)) {
-            // Simulate withdraw operation
             return withdraw(accountNumber, amount);
         } else if ("checkBalance".equals(operation)) {
-            // Simulate checking account balance
             return checkBalance(accountNumber);
         } else if ("transfer".equals(operation)) {
-            // Simulate transfer operation
             return transfer(accountNumber, "123456", amount);
         } else {
-            // Unsupported operation
             return false;
         }
     }
 
-    //   logic for database interactions (replace with your actual database code)
-    private boolean deposit(String accountNumber, double amount) {
-        try {
-            // Connect to your database (replace with your database details)
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/yourdatabase", "username", "password");
-
-            // Perform deposit operation (replace with your actual SQL)
+    private static boolean deposit(String accountNumber, double amount) {
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
             String depositSQL = "UPDATE accounts SET balance = balance + ? WHERE account_number = ?";
             try (PreparedStatement depositStatement = connection.prepareStatement(depositSQL)) {
                 depositStatement.setDouble(1, amount);
                 depositStatement.setString(2, accountNumber);
                 int rowsAffected = depositStatement.executeUpdate();
-                if (rowsAffected > 0) {
-                    return true;
-                } else {
-                    System.out.println("Deposit failed: No rows affected");
-                    return false;
-                }
+                return rowsAffected > 0;
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Deposit failed: " + e.getMessage());
             return false;
         }
     }
 
-    //   logic for withdrawal
-    private boolean withdraw(String accountNumber, double amount) {
-        try {
-            // Connect to your database (replace with your database details)
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/yourdatabase", "username", "password");
-
-            // Perform withdrawal operation (replace with your actual SQL)
+    private static boolean withdraw(String accountNumber, double amount) {
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
             String withdrawSQL = "UPDATE accounts SET balance = balance - ? WHERE account_number = ?";
             try (PreparedStatement withdrawStatement = connection.prepareStatement(withdrawSQL)) {
                 withdrawStatement.setDouble(1, amount);
                 withdrawStatement.setString(2, accountNumber);
                 int rowsAffected = withdrawStatement.executeUpdate();
-                if (rowsAffected > 0) {
-                    return true;
-                } else {
-                    System.out.println("Withdrawal failed: No rows affected");
-                    return false;
-                }
+                return rowsAffected > 0;
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Withdrawal failed: " + e.getMessage());
             return false;
         }
     }
 
-    //   logic for checking balance
-    private boolean checkBalance(String accountNumber) {
-        try {
-            // Connect to your database (replace with your database details)
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/yourdatabase", "username", "password");
-
-            // Retrieve account balance (replace with your actual SQL)
+    private static boolean checkBalance(String accountNumber) {
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
             String balanceSQL = "SELECT balance FROM accounts WHERE account_number = ?";
             try (PreparedStatement balanceStatement = connection.prepareStatement(balanceSQL)) {
                 balanceStatement.setString(1, accountNumber);
                 ResultSet resultSet = balanceStatement.executeQuery();
                 if (resultSet.next()) {
                     double balance = resultSet.getDouble("balance");
-                    if (balance >= 0) {
-                        return true;
-                    } else {
-                        System.out.println("Invalid balance: " + balance);
-                        return false;
-                    }
+                    return balance >= 0;
                 } else {
-                    System.out.println("Account not found");
                     return false;
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Check balance failed: " + e.getMessage());
             return false;
         }
     }
 
-    //   logic for transfer
-    private boolean transfer(String senderAccount, String receiverAccount, double amount) {
-        try {
-            // Connect to your database (replace with your database details)
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/yourdatabase", "username", "password");
-
-            // Perform transfer operation (replace with your actual SQL)
+    private static boolean transfer(String senderAccount, String receiverAccount, double amount) {
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
             String withdrawSQL = "UPDATE accounts SET balance = balance - ? WHERE account_number = ?";
             String depositSQL = "UPDATE accounts SET balance = balance + ? WHERE account_number = ?";
             
@@ -192,7 +154,6 @@
                     return true;
                 } else {
                     connection.rollback();
-                    System.out.println("Transfer failed: No rows affected");
                     return false;
                 }
             } finally {
@@ -200,10 +161,11 @@
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Transfer failed: " + e.getMessage());
             return false;
         }
     }
+}
+}
 %>
 
 </body>

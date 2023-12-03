@@ -103,10 +103,11 @@
 					<td>${category.name }</td>
 
 					<td>
-						<form action="categories/delete" method="get">
-							<input type="hidden" name="id" value="${category.id}">
-							<input type="submit" value="Delete" class="btn btn-danger">
-						</form>
+						<form id="deleteForm" action="categories/delete" method="post" onsubmit="return confirmDelete();">
+                            <input type="hidden" name="id" value="${category.id}">
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+                                <div id="messageContainer"></div>
 					</td>
 
 					<td>
@@ -169,6 +170,27 @@
 		</table>
 		
 	</div>
+
+
+
+
+<script>
+    function confirmDelete() {
+        var result = confirm("Are you sure you want to delete this category?");
+        var messageContainer = document.getElementById("messageContainer");
+
+        if (result) {
+            messageContainer.innerText = "Category deleted!";
+            return true; // Form will be submitted
+        } else {
+            messageContainer.innerText = "Deletion canceled.";
+            return false; // Form submission will be cancelled
+        }
+    }
+</script>
+
+
+
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

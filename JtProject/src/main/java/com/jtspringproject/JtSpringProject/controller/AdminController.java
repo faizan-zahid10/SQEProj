@@ -31,11 +31,11 @@ public class AdminController {
 	
 	int adminlogcheckin = 0;
 	String usernameforclass = "";
-	@RequestMapping(value = {"/","/logout"})
+	@RequestMapping(value ={"/","/logout"})
 	public String returnIndex() {
 		adminlogcheckin =0;
 		usernameforclass = "";
-		return "userLogin";
+		return "adminlogin";
 	}
 	
 	

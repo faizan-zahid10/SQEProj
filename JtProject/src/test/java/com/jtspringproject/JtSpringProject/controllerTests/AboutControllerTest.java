@@ -9,7 +9,7 @@ public class AboutControllerTest {
     public void testShowAboutPage() {
         AboutController aboutController = new AboutController();
         String viewName = aboutController.showAboutPage();
-        assertEquals("about", viewName);
+        assertEquals("aboutwrong", viewName);
     }
 }
 

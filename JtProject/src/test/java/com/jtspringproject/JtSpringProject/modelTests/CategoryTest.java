@@ -31,5 +31,6 @@ public class CategoryTest {
         category.setName("UpdatedTestCategory");
 
         assertEquals("UpdatedTestCategory", category.getName());
+        
     }
 }

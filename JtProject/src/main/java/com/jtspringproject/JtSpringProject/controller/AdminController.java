@@ -29,7 +29,7 @@ public class AdminController {
 	@Autowired
 	private productService productService;
 	
-	int adminlogcheckin = 0;
+	public int adminlogcheckin = 0;
 	String usernameforclass = "";
 	@RequestMapping(value ={"/","/logout"})
 	public String returnIndex() {
@@ -278,5 +278,7 @@ public class AdminController {
 		}
 		return "redirect:/index";
 	}
+	
+
 
 }

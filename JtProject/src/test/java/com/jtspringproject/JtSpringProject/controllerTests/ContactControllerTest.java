@@ -1,4 +1,4 @@
-package com.jtspringproject.JtSpringProject.controller;
+package com.jtspringproject.JtSpringProject.controllerTests;
 
 import com.jtspringproject.JtSpringProject.controller.ContactController;
 import org.junit.jupiter.api.Test;

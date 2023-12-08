@@ -1,10 +1,9 @@
-package com.jtspringproject.JtSpringProject.controller;
+package com.jtspringproject.JtSpringProject.controllerTests;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ui.ConcurrentModel;
-
+import com.jtspringproject.JtSpringProject.controller.AdminController;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 class AdminControllerTest {
 
     @Test

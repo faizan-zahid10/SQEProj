@@ -39,7 +39,7 @@
 					<li class="nav-item active"><a class="nav-link"
 						href="/admin/Dashboard" >Home Page</a></li>
 					<li class="nav-item active"><a class="nav-link"
-						href="/logout" >Logout</a></li>
+						href="logout" >Logout</a></li>
 
 				</ul>
 

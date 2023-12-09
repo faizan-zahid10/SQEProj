@@ -28,7 +28,7 @@
      * Password: `765`
     
      * Our new Usename:root
-     * Our new Password:my123123
+     * Our new Password:1234
 
 ### Database
 
